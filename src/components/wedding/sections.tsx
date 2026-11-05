@@ -35,6 +35,30 @@ export function Nav() {
   );
 }
 
+// A gentle shift from champagne to ivory: enough to notice, without pulling focus from the names above.
+const nameInTag = "text-on-image";
+
+// Picks the couple's names out of the hashtag (Ni for Nidhi, Pun for Puneet), then spells out the key.
+function Hashtag() {
+  const parts = wedding.hashtagNames.map((n) => n.part);
+  const pieces = wedding.hashtag.split(new RegExp(`(${parts.join("|")})`));
+  return (
+    <>
+      <p className="text-champagne font-serif italic text-lg md:text-xl mt-3 tracking-wide">
+        {pieces.map((piece, i) => (parts.includes(piece) ? <span key={i} className={nameInTag}>{piece}</span> : piece))}
+      </p>
+      <p className="text-on-image opacity-75 font-serif italic text-sm">
+        {wedding.hashtagNames.map((n, i) => (
+          <span key={n.part}>
+            {i > 0 && <span className="mx-1.5" aria-hidden>·</span>}
+            {n.part} for {n.name}
+          </span>
+        ))}
+      </p>
+    </>
+  );
+}
+
 export function Hero() {
   return (
     <header id="top" className="relative min-h-[100svh] flex flex-col items-center justify-end overflow-hidden">
@@ -52,7 +76,7 @@ export function Hero() {
         <div className="hairline w-32 mx-auto my-6" />
         <p className="text-on-image text-base md:text-lg font-semibold tracking-[0.2em] uppercase">{displayedDate}</p>
         <p className="text-on-image text-sm mt-1">{clean(wedding.location)}{isTBC(wedding.location) && " · details to follow"}</p>
-        {wedding.hashtag && <p className="text-champagne font-serif italic text-lg md:text-xl mt-3 tracking-wide">{wedding.hashtag}</p>}
+        {wedding.hashtag && <Hashtag />}
         {wedding.hashtagTagline && <p className="text-on-image font-serif italic text-base mt-1">{wedding.hashtagTagline}</p>}
         {!wedding.dateIsPlaceholder && <div className="mt-8"><Countdown compact light /></div>}
         <a href="#celebrations" className="mt-10 inline-flex items-center gap-2 h-12 px-8 rounded-full bg-ivory text-forest text-sm tracking-wide [text-shadow:none] hover:opacity-90 transition">

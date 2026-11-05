@@ -49,6 +49,11 @@ export const wedding = {
   timezone: "Asia/Kolkata",
   location: "Bathinda",
   hashtag: "#sarvgunNiPun",
+  // The couple's names are hidden in the hashtag; the hero highlights these parts and names them.
+  hashtagNames: [
+    { part: "Ni", name: "Nidhi" },
+    { part: "Pun", name: "Puneet" },
+  ],
   hashtagTagline: "A union of virtues, a lifetime of love",
   rsvpDeadline: TBC("Date to be confirmed"),
   // Google Apps Script web app URL (ends in /exec) that appends each RSVP to a Google Sheet.
