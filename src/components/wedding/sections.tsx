@@ -197,12 +197,13 @@ export function Closing() {
     <footer className="relative py-28 md:py-36 px-6 text-center overflow-hidden bg-muted/60">
       <Botanical className="w-40 mx-auto mb-6 sway" />
       <Reveal>
-        <p className="font-serif italic text-3xl md:text-5xl text-balance">We can't wait to celebrate with you.</p>
-        <p className="font-serif text-5xl md:text-7xl mt-8">{coupleNames}</p>
-        <div className="hairline w-24 mx-auto my-6" />
-        <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground">{displayedDate}</p>
-        <p className="eyebrow mt-12">With warm regards</p>
-        <p className="font-serif text-3xl md:text-4xl mt-3 text-balance">{wedding.host.from}</p>
+        {/* Reads as one note from the parents: an invitation to bless the couple, then their signature. */}
+        <p className="font-serif italic text-3xl md:text-5xl text-balance">Please join us in blessing</p>
+        <p className="font-serif text-5xl md:text-7xl mt-6">{coupleNames}</p>
+        <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground mt-6">{displayedDate}</p>
+        <div className="hairline w-24 mx-auto my-10" />
+        <p className="font-serif italic text-xl md:text-2xl text-muted-foreground">With warm regards,</p>
+        <p className="font-serif text-3xl md:text-4xl mt-2 text-balance">{wedding.host.from}</p>
         <p className="text-sm text-muted-foreground mt-2 text-balance">{wedding.host.address}</p>
         <div className="mt-10"><ShareButton /></div>
       </Reveal>

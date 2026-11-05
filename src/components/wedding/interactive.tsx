@@ -158,7 +158,7 @@ export function Gallery() {
         <Reveal className="max-w-2xl mx-auto text-center -mt-4 mb-12 md:mb-16 font-serif text-lg md:text-xl leading-relaxed text-balance">
           {wedding.galleryNote.map((p) => <p key={p} className="mb-4">{p}</p>)}
           <p className="mt-6 italic text-muted-foreground">With love,</p>
-          <p className="text-2xl md:text-3xl mt-1">{coupleNames}</p>
+          <p className="text-2xl md:text-3xl mt-1">{wedding.host.from}</p>
         </Reveal>
         <div className="relative max-w-2xl mx-auto rounded-sm bg-card px-4 pt-12 pb-16 sm:px-10 sm:pt-16 sm:pb-20 shadow-[0_18px_50px_-20px_oklch(0.3_0.03_80/0.45)] ring-1 ring-gold/20">
           <img src={botanical} alt="" aria-hidden className="pointer-events-none absolute -top-6 -right-6 w-28 sm:w-36 opacity-70 rotate-12" loading="lazy" />
