@@ -72,7 +72,7 @@ export function Hero() {
         <h1 className="text-on-image text-6xl sm:text-7xl md:text-8xl leading-[0.95]">
           {wedding.groom} <span className="italic text-champagne">&amp;</span><br className="sm:hidden" /> {wedding.bride}
         </h1>
-        <p className="text-on-image mt-6 text-base md:text-lg font-serif italic text-balance">{wedding.invitation}</p>
+        <p className="text-on-image mt-6 text-base md:text-lg font-serif italic text-balance whitespace-pre-line">{wedding.invitation}</p>
         <div className="hairline w-32 mx-auto my-6" />
         <p className="text-on-image text-base md:text-lg font-semibold tracking-[0.2em] uppercase">{displayedDate}</p>
         <p className="text-on-image text-sm mt-1">{clean(wedding.location)}{isTBC(wedding.location) && " · details to follow"}</p>

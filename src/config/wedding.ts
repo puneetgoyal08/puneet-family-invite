@@ -42,7 +42,8 @@ export const wedding = {
     from: "Mrs Suman Goyal & Er HD Goyal",
     address: "#103, Phase-3, Model\u00a0Town, Bathinda, Punjab",
   },
-  invitation: "We joyfully invite you to celebrate the wedding of our son.",
+  // Two lines of a couplet, shown on separate lines under the names.
+  invitation: "Bete ke sehre mein beti ki muskaan,\naapke aashirwad se poore hon armaan",
   date: "2026-12-05T20:00:00+05:30",
   dateIsPlaceholder: false,
   timeIsPlaceholder: false,

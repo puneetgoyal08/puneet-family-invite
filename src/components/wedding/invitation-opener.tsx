@@ -65,7 +65,7 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
           <span className="invitation-opening__host-name">{wedding.host.from}</span>
           <span className="invitation-opening__host-address">{wedding.host.address}</span>
           <span className="invitation-opening__flourish" aria-hidden="true">❦</span>
-          <span className="invitation-opening__host-invite">request the pleasure of your company at the wedding of their son</span>
+          <span className="invitation-opening__host-invite">joyfully invite you to celebrate their son’s wedding and welcome a new daughter into the family</span>
         </div>
         <h1 id="invitation-opening-title" className="invitation-opening__title" aria-label={coupleNames}>
           {coupleNames.split(" & ").map((name, index) => (
