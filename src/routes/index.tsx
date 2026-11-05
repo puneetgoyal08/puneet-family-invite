@@ -12,10 +12,10 @@ import { ShareButton } from "@/components/wedding/share";
 import { InvitationOpener } from "@/components/wedding/invitation-opener";
 import { MusicToggle } from "@/components/wedding/music";
 import { useState } from "react";
+import { coupleNames, wedding } from "@/config/wedding";
 
-const title = "Nidhi & Puneet — Wedding Invitation";
-const description =
-  "Together with our families, we invite you to celebrate the wedding of Nidhi & Puneet. Events, travel, RSVP and more.";
+const title = `${coupleNames} — Wedding Invitation`;
+const description = `${wedding.host.from} invite you to celebrate the wedding of ${coupleNames}. Events, travel, RSVP and more.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({

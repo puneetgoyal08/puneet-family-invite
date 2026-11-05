@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { coupleNames } from "@/config/wedding";
+import { coupleNames, wedding } from "@/config/wedding";
 import { Monogram } from "./ui";
 import { startMusic } from "./music";
 import { ArrowRight } from "lucide-react";
@@ -59,8 +59,10 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
         </div>
       ))}
       <div className="invitation-opening__content">
-        <p id="invitation-opening-description" className="invitation-opening__description">
-          You are warmly invited to celebrate
+        <p id="invitation-opening-description" className="invitation-opening__description invitation-opening__host">
+          Invitation from
+          <span className="invitation-opening__host-name">{wedding.host.from}</span>
+          <span className="invitation-opening__host-address">{wedding.host.address}</span>
         </p>
         <Monogram light className="invitation-opening__monogram" />
         <h1 id="invitation-opening-title" className="invitation-opening__title" aria-label={coupleNames}>

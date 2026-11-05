@@ -13,7 +13,7 @@ describe("InvitationOpener", () => {
     render(<InvitationOpener onOpened={onOpened} />);
 
     fireEvent.click(
-      screen.getByRole("button", { name: "Open Nidhi & Puneet's wedding invitation" }),
+      screen.getByRole("button", { name: "Open Puneet & Nidhi's wedding invitation" }),
     );
 
     expect(onOpened).not.toHaveBeenCalled();

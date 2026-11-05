@@ -46,7 +46,7 @@ export function Hero() {
       <div className="hero-copy relative z-10 text-center px-6 pb-16 pt-24 max-w-2xl animate-in fade-in duration-1000">
         <Monogram light className="h-20 w-20 mx-auto mb-6" />
         <h1 className="text-on-image text-6xl sm:text-7xl md:text-8xl leading-[0.95]">
-          {wedding.bride} <span className="italic text-champagne">&amp;</span><br className="sm:hidden" /> {wedding.groom}
+          {wedding.groom} <span className="italic text-champagne">&amp;</span><br className="sm:hidden" /> {wedding.bride}
         </h1>
         <p className="text-on-image mt-6 text-base md:text-lg font-serif italic text-balance">{wedding.invitation}</p>
         <div className="hairline w-32 mx-auto my-6" />
@@ -81,9 +81,9 @@ export function Families() {
         <h2 id="families-heading" className="eyebrow text-balance">With the blessings of our families</h2>
         <div className="hairline w-24 mx-auto mt-6 mb-12" />
         <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-12">
-          <FamilyMember name={wedding.bride} relation="Daughter of" parents={wedding.brideParents} />
-          <span aria-hidden className="font-serif italic text-5xl text-gold">&amp;</span>
           <FamilyMember name={wedding.groom} relation="Son of" parents={wedding.groomParents} />
+          <span aria-hidden className="font-serif italic text-5xl text-gold">&amp;</span>
+          <FamilyMember name={wedding.bride} relation="Daughter of" parents={wedding.brideParents} />
         </div>
       </Reveal>
     </section>

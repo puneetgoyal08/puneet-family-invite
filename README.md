@@ -1,26 +1,20 @@
-# Ivory Sage Invites
+# Puneet & Nidhi — family invitation
 
-Implement exactly the screenshot and nothing else
+The copy of the wedding invitation that Puneet's parents send to relatives. It was cloned from
+[ivory-sage-invites](https://github.com/puneetgoyal08/ivory-sage-invites) (the couple's own
+invitation) and differs in three ways: the opening page says who the invitation is from, Puneet's
+name comes first throughout, and the hero line speaks for the parents.
 
-This project was built with [Lovable](https://lovable.dev).
+Everything else — events, travel, gallery, RSVP — lives in `src/config/wedding.ts`.
 
-**Live app**: https://ivory-sage-invites.lovable.app
+## Develop
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d1c4835d-0b53-47a8-a7fd-68729f616c35).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm i --legacy-peer-deps
 npm run dev
 ```
+
+## Deploy
+
+Vercel builds it with `npm run build` and serves `dist/client` (see `vercel.json`). Pushes to
+`main` also publish a copy to GitHub Pages through `.github/workflows/deploy-pages.yml`.

@@ -36,7 +36,13 @@ export const wedding = {
   groom: "Puneet",
   brideParents: "Pooja Bansal & Parveen Kumar Bansal",
   groomParents: "Suman Goyal & Harcharan Dass Goyal",
-  invitation: "We joyfully invite you to celebrate our wedding.",
+  // This copy is sent by Puneet's parents to relatives, so it leads with Puneet and the
+  // opening page says who the invitation is from.
+  host: {
+    from: "Mrs Suman Goyal & Er HD Goyal",
+    address: "#103, Phase-3, Model\u00a0Town, Bathinda, Punjab",
+  },
+  invitation: "We joyfully invite you to celebrate the wedding of our son.",
   date: "2026-12-05T20:00:00+05:30",
   dateIsPlaceholder: false,
   timeIsPlaceholder: false,
@@ -129,7 +135,7 @@ export const wedding = {
   ],
 };
 
-export const coupleNames = `${wedding.bride} & ${wedding.groom}`;
+export const coupleNames = `${wedding.groom} & ${wedding.bride}`;
 
 export function formatDate(iso: string, opts: Intl.DateTimeFormatOptions) {
   return new Intl.DateTimeFormat("en-IN", { timeZone: wedding.timezone, ...opts }).format(new Date(iso));
