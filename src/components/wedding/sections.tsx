@@ -124,7 +124,7 @@ export function Celebrations() {
                   )}
                 </div>
                 <div>
-                  {e.ceremonies && <p className="eyebrow mb-3">{e.ceremonies}</p>}
+                  <p className="eyebrow mb-3">{e.ceremony}</p>
                   <h3 className="text-4xl md:text-[2.75rem] leading-[1.1]">{e.name}</h3>
                   {!isTBC(e.description) && <p className="text-muted-foreground mt-1 font-serif italic text-xl md:text-2xl">{e.description}</p>}
                   <div className="mt-5 h-px w-12 bg-gold/60" />

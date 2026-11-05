@@ -19,8 +19,7 @@ export const clean = (s?: string) => (s ?? "").replace(TBC_PREFIX, "");
 export type WeddingEvent = {
   id: string;
   name: string;
-  ceremony: string; // traditional name, used in RSVPs
-  ceremonies?: string; // shown above the event name, e.g. when one day holds two ceremonies
+  ceremony: string; // traditional name, shown above the event name and used in RSVPs
   description: string;
   start: string; // ISO with timezone offset
   end: string; // same as start when no end time is set; shown as "onwards"
@@ -64,7 +63,6 @@ export const wedding = {
       id: "haldi",
       name: "Golden Hour",
       ceremony: "Haldi & Sainth",
-      ceremonies: "Haldi & Sainth",
       description: "Shagun ka noor, apno ka pyar",
       start: "2026-12-03T10:00:00+05:30",
       end: "2026-12-03T10:00:00+05:30",
@@ -78,7 +76,7 @@ export const wedding = {
     {
       id: "sangeet",
       name: "An Evening of Music",
-      ceremony: "Sangeet",
+      ceremony: "Ladies Sangeet",
       description: "Jashan, junoon aur dance ka suroor",
       start: "2026-12-04T19:00:00+05:30",
       end: "2026-12-04T19:00:00+05:30",
