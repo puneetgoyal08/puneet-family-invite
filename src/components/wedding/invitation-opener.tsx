@@ -63,6 +63,7 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
           Invitation from
           <span className="invitation-opening__host-name">{wedding.host.from}</span>
           <span className="invitation-opening__host-address">{wedding.host.address}</span>
+          <span className="invitation-opening__host-invite">invite you to the wedding of their son</span>
         </p>
         <Monogram light className="invitation-opening__monogram" />
         <h1 id="invitation-opening-title" className="invitation-opening__title" aria-label={coupleNames}>

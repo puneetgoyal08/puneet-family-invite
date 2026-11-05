@@ -257,7 +257,7 @@
   gap: 0.4em;
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.05rem, 8vw, 4.25rem);
+  font-size: clamp(1.8rem, 7vw, 3.25rem);
   line-height: 1;
   white-space: nowrap;
 }
@@ -288,20 +288,26 @@
   text-wrap: balance;
 }
 
+/* Relatives may not know the couple, so the parents' names lead the card. */
 .invitation-opening__host-name {
   color: var(--champagne);
-  font-size: 1.45rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .invitation-opening__host-address {
+  margin-top: 0.2rem;
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-style: normal;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.85;
+}
+
+.invitation-opening__host-invite {
+  margin-top: 0.9rem;
 }
 
 .invitation-opening__open {

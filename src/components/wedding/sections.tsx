@@ -124,6 +124,7 @@ export function Celebrations() {
                   )}
                 </div>
                 <div>
+                  {e.ceremonies && <p className="eyebrow mb-3">{e.ceremonies}</p>}
                   <h3 className="text-4xl md:text-[2.75rem] leading-[1.1]">{e.name}</h3>
                   {!isTBC(e.description) && <p className="text-muted-foreground mt-1 font-serif italic text-xl md:text-2xl">{e.description}</p>}
                   <div className="mt-5 h-px w-12 bg-gold/60" />
@@ -200,6 +201,9 @@ export function Closing() {
         <p className="font-serif text-5xl md:text-7xl mt-8">{coupleNames}</p>
         <div className="hairline w-24 mx-auto my-6" />
         <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground">{displayedDate}</p>
+        <p className="eyebrow mt-12">With warm regards</p>
+        <p className="font-serif text-3xl md:text-4xl mt-3 text-balance">{wedding.host.from}</p>
+        <p className="text-sm text-muted-foreground mt-2 text-balance">{wedding.host.address}</p>
         <div className="mt-10"><ShareButton /></div>
       </Reveal>
     </footer>

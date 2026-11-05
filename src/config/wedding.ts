@@ -20,6 +20,7 @@ export type WeddingEvent = {
   id: string;
   name: string;
   ceremony: string; // traditional name, used in RSVPs
+  ceremonies?: string; // shown above the event name, e.g. when one day holds two ceremonies
   description: string;
   start: string; // ISO with timezone offset
   end: string; // same as start when no end time is set; shown as "onwards"
@@ -62,11 +63,12 @@ export const wedding = {
     {
       id: "haldi",
       name: "Golden Hour",
-      ceremony: "Haldi",
+      ceremony: "Haldi & Sainth",
+      ceremonies: "Haldi & Sainth",
       description: "Shagun ka noor, apno ka pyar",
-      start: "2026-12-03T00:00:00+05:30",
-      end: "2026-12-03T00:00:00+05:30",
-      timeIsPlaceholder: true,
+      start: "2026-12-03T10:00:00+05:30",
+      end: "2026-12-03T10:00:00+05:30",
+      timeIsPlaceholder: false,
       venue: "At home",
       address: "Bathinda",
       hideDirections: true,
