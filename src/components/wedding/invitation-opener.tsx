@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { coupleNames, wedding } from "@/config/wedding";
-import { Monogram } from "./ui";
+import { coupleNames, formatDate, wedding } from "@/config/wedding";
 import { startMusic } from "./music";
 import { ArrowRight } from "lucide-react";
 import doorsLandscape from "@/assets/opener-landscape.jpg";
 import doorsPortrait from "@/assets/opener-portrait.jpg";
+
+const invitationDate = formatDate(wedding.date, { day: "numeric", month: "long", year: "numeric" });
 
 export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
   const [isOpening, setIsOpening] = useState(false);
@@ -59,13 +60,13 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
         </div>
       ))}
       <div className="invitation-opening__content">
-        <p id="invitation-opening-description" className="invitation-opening__description invitation-opening__host">
-          Invitation from
+        <div id="invitation-opening-description" className="invitation-opening__host">
+          <span className="invitation-opening__eyebrow">Invitation from</span>
           <span className="invitation-opening__host-name">{wedding.host.from}</span>
           <span className="invitation-opening__host-address">{wedding.host.address}</span>
-          <span className="invitation-opening__host-invite">invite you to the wedding of their son</span>
-        </p>
-        <Monogram light className="invitation-opening__monogram" />
+          <span className="invitation-opening__flourish" aria-hidden="true">❦</span>
+          <span className="invitation-opening__host-invite">request the pleasure of your company at the wedding of their son</span>
+        </div>
         <h1 id="invitation-opening-title" className="invitation-opening__title" aria-label={coupleNames}>
           {coupleNames.split(" & ").map((name, index) => (
             <span key={name}>
@@ -74,6 +75,7 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
             </span>
           ))}
         </h1>
+        <p className="invitation-opening__date">{invitationDate} · {wedding.location}</p>
 
         <button
           type="button"
@@ -85,9 +87,6 @@ export function InvitationOpener({ onOpened }: { onOpened: () => void }) {
         >
           Open the invitation <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>
-        <span className="invitation-opening__ornament" aria-hidden="true">
-          ❦
-        </span>
       </div>
     </div>
   );

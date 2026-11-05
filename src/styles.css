@@ -221,21 +221,28 @@
   transform: translateX(101%);
 }
 
+/* A cream card with a gold double rule, like a printed invitation handed through the doors.
+   Dark text on cream reads easily for relatives opening it on a phone. */
 .invitation-opening__content {
+  --card-ink: var(--forest);
+  --card-muted: oklch(0.45 0.03 150);
+  --card-accent: oklch(0.55 0.09 70);
   position: relative;
   z-index: 3;
   display: flex;
-  width: min(100%, 34rem);
+  width: min(100%, 21rem);
   flex-direction: column;
   align-items: center;
-  padding: 2.25rem 1.75rem 1.5rem;
-  border: 1px solid oklch(0.9 0.06 85 / 0.35);
-  border-radius: 1.25rem;
-  background: oklch(0.19 0.035 155 / 0.62);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 24px 60px oklch(0.1 0.02 155 / 0.5);
+  padding: 2.5rem 1.5rem 2rem;
+  border: 1px solid var(--gold);
+  border-radius: 0.4rem;
+  outline: 1px solid var(--gold);
+  outline-offset: -8px;
+  background: var(--ivory);
+  box-shadow: 0 30px 60px -20px oklch(0.1 0.02 155 / 0.6);
+  color: var(--card-ink);
   text-align: center;
+  text-wrap: balance;
   transition: opacity 350ms ease, transform 700ms cubic-bezier(0.2, 0.7, 0.25, 1);
 }
 
@@ -244,70 +251,75 @@
   transform: translateY(-0.75rem) scale(0.98);
 }
 
-.invitation-opening__monogram {
-  width: 5.5rem;
-  height: 5.5rem;
-  margin-bottom: 1.1rem;
+.invitation-opening__host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.invitation-opening__eyebrow {
+  margin-bottom: 0.9rem;
+  color: var(--card-accent);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* Relatives may not know the couple, so the parents' names lead the card. */
+.invitation-opening__host-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 8vw, 2.4rem);
+  line-height: 1.12;
+}
+
+.invitation-opening__host-address {
+  margin-top: 0.65rem;
+  color: var(--card-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.invitation-opening__flourish {
+  margin: 1.1rem 0 0.9rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.invitation-opening__host-invite {
+  color: var(--card-muted);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.35;
 }
 
 .invitation-opening__title {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.4em;
-  margin: 0;
+  gap: 0.3em;
+  margin: 0.55rem 0 0;
+  color: var(--card-accent);
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 7vw, 3.25rem);
-  line-height: 1;
+  font-size: clamp(1.65rem, 7vw, 2.1rem);
+  line-height: 1.1;
   white-space: nowrap;
 }
 
 .invitation-opening__title i {
-  margin-right: 0.4em;
-  color: var(--champagne);
-  font-size: 0.62em;
+  margin-right: 0.3em;
+  font-size: 0.7em;
   font-weight: 400;
 }
 
-.invitation-opening__description {
-  margin: 0 0 1.1rem;
-  color: oklch(0.93 0.02 85);
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-style: italic;
-}
-
-/* Who the invitation is from, as on a printed card. */
-.invitation-opening__host {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  margin-bottom: 1.4rem;
-  text-align: center;
-  text-wrap: balance;
-}
-
-/* Relatives may not know the couple, so the parents' names lead the card. */
-.invitation-opening__host-name {
-  color: var(--champagne);
-  font-size: clamp(2rem, 8vw, 3rem);
-  font-style: normal;
-  line-height: 1.1;
-}
-
-.invitation-opening__host-address {
-  margin-top: 0.2rem;
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-style: normal;
-  letter-spacing: 0.14em;
+.invitation-opening__date {
+  margin: 0.6rem 0 0;
+  color: var(--card-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.85;
-}
-
-.invitation-opening__host-invite {
-  margin-top: 0.9rem;
 }
 
 .invitation-opening__open {
@@ -316,12 +328,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   padding: 0 1.65rem;
-  border: 1px solid var(--ivory);
+  border: 1px solid var(--forest);
   border-radius: 999px;
-  background: var(--ivory);
-  color: var(--forest);
+  background: var(--forest);
+  color: var(--ivory);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -332,22 +344,16 @@
 
 .invitation-opening__open:hover:not(:disabled) {
   transform: translateY(-2px);
-  background: var(--champagne);
+  background: oklch(0.38 0.055 155);
 }
 
 .invitation-opening__open:focus-visible {
-  outline: 2px solid var(--champagne);
-  outline-offset: 6px;
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .invitation-opening__open:disabled {
   cursor: default;
-}
-
-.invitation-opening__ornament {
-  margin-top: 1.25rem;
-  color: oklch(0.9 0.06 85 / 0.8);
-  font-size: 1.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
