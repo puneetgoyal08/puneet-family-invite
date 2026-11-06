@@ -5,7 +5,7 @@ The copy of the wedding invitation that Puneet's parents send to relatives. It w
 invitation) and differs in three ways: the opening page says who the invitation is from, Puneet's
 name comes first throughout, and the hero line speaks for the parents.
 
-Everything else — events, travel, gallery, RSVP — lives in `src/config/wedding.ts`.
+Everything else — events, travel, gallery — lives in `src/config/wedding.ts`.
 
 ## Develop
 

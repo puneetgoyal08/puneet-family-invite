@@ -10,7 +10,7 @@ const fullDate = formatDate(wedding.date, { weekday: "long", day: "numeric", mon
 const displayedDate = wedding.dateIsPlaceholder ? "Date to be announced" : fullDate;
 
 const NAV = [
-  ["celebrations", "Events"], ["travel", "Travel"], ["rsvp", "RSVP"], ["gallery", "Gallery"],
+  ["celebrations", "Events"], ["travel", "Travel"], ["gallery", "Gallery"],
 ] as const;
 
 export function Nav() {

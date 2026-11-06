@@ -7,7 +7,7 @@ import {
   Travel,
   Closing,
 } from "@/components/wedding/sections";
-import { Rsvp, Gallery } from "@/components/wedding/interactive";
+import { Gallery } from "@/components/wedding/interactive";
 import { ShareButton } from "@/components/wedding/share";
 import { InvitationOpener } from "@/components/wedding/invitation-opener";
 import { MusicToggle } from "@/components/wedding/music";
@@ -15,7 +15,7 @@ import { useState } from "react";
 import { coupleNames, wedding } from "@/config/wedding";
 
 const title = `${coupleNames} — Wedding Invitation`;
-const description = `${wedding.host.from} invite you to celebrate the wedding of ${coupleNames}. Events, travel, RSVP and more.`;
+const description = `${wedding.host.from} invite you to celebrate the wedding of ${coupleNames}. Events, travel and more.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +45,6 @@ function Index() {
         <Families />
         <Celebrations />
         <Travel />
-        <Rsvp />
         <Gallery />
         <Closing />
         <ShareButton variant="float" />
